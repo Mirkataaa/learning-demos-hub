@@ -1,0 +1,16 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+/* 10/16 = 0.625 * 100 */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Monsterrat' , sans-serif;
+}
+
+p {
+    font-size: 3rem;
+}
