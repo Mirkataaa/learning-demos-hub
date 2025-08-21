@@ -36,6 +36,11 @@ html {
     color: #fff;
     width: 30rem;
     z-index: 100;
+    transition: left .8s;
+}
+
+.container.change .banner {
+    left: 5rem;
 }
 
 .banner h1 {
@@ -90,7 +95,11 @@ html {
     justify-content: space-around;
     align-items: center;
     padding: 10rem 0;
+    transition: left 1.5s cubic-bezier(0.19,1,0.22,1);
+}
 
+.container.change .signup-form {
+    left: 40rem;
 }
 
 .signup-form h1 {
