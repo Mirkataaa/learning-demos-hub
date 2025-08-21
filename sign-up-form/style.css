@@ -27,6 +27,25 @@ html {
     position: relative;
 }
 
+.banner {
+    position:absolute;
+    top: 25%;
+    left: 5rem;
+    text-align: center;
+    color: #fff;
+    width: 30rem;
+    z-index: 100;
+}
+
+.banner h1 {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+}
+
+.banner p {
+    font-size: 2rem;
+}
+
 .green-bg {
     width: 40%;
     height: 100%;
