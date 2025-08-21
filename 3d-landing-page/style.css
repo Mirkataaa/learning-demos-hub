@@ -61,17 +61,76 @@ html {
 .box {
   transform-style: preserve-3d;
   transform: rotateY(45deg) rotateX(30deg);
+  position: relative;
+}
+
+.box-1 {
+    left: -25rem;
+    top: -6rem;
+}
+.box-2 {
+    left: -11rem;
+    top: -23rem;
+}
+.box-3 {
+    left: 10rem;
+    top: -23rem;
+}
+.box-4 {
+    left: 25rem;
+    top: -6rem;
+}
+.box-5 {
+    left: 22rem;
+    top: 13rem;
+}
+.box-6 {
+    left: 0rem;
+    top: 25rem;
+}
+.box-7 {
+    left: -21rem;
+    top: 14rem;
 }
 
 .box div {
   width: 7rem;
   height: 7rem;
-  background-color: #efd81d;
   position: absolute;
   opacity: 0.6;
   box-shadow: 0.1rem 0.1rem 0.1rem #eee inset, -0.1rem -0.1rem 0.1rem #eee inset,
     0.1rem 0.1rem 3.5rem rgba(255, 255, 255, 0.2),
     -0.1rem -0.1rem 3.5rem rgba(255, 255, 255, 0.2);
+}
+
+.box-1 div {
+    /* JS */
+    background-color: #efd81d;
+}
+
+.box-2 div {
+    /* React */
+    background-color: #61dbfb;
+}
+.box-3 div {
+    /* Vue */
+    background-color: #41b883;
+}
+.box-4 div {
+    /* AngularJS */
+    background-color: #b52e31;
+}
+.box-5 div {
+    /* NodeJs */
+    background-color: #43863d;
+}
+.box-6 div {
+    /* Sass */
+    background-color: #cf6498;
+}
+.box-7 div {
+    /* Svetle */
+    background-color: #DE6449;
 }
 
 .top-side {
