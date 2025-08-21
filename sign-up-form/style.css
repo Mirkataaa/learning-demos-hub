@@ -25,12 +25,13 @@ html {
     border-radius: 3rem;
     box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
     position: relative;
+    overflow: hidden; /* hidden banner */ 
 }
 
 .banner {
     position:absolute;
     top: 25%;
-    left: 5rem;
+    left: -30rem; /* transition start point */
     text-align: center;
     color: #fff;
     width: 30rem;
@@ -47,12 +48,18 @@ html {
 }
 
 .green-bg {
-    width: 40%;
+    width: 100%; /* intial width */
     height: 100%;
     background: linear-gradient(to right, #3ab19b, #4cbf91 );
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 50; /* hide form */
+    transition: width 1.5s cubic-bezier(0.19,1,0.22,1);
+}
+
+.container.change .green-bg {
+    width: 40%;
 }
 
 
@@ -77,7 +84,7 @@ html {
     height: 100%;
     position: absolute;
     top: 0;
-    left: 40rem;
+    left: 0rem; /* move to transition later */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
