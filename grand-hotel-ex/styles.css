@@ -130,5 +130,38 @@ body {
     right: 1rem;
     cursor: pointer;
 }
+
+.navigation-list {
+    list-style: none;
+    padding: 0;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation-link {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.navigation-item {
+     position: relative;
+}
+
+.navigation-link::before {
+    content: "";
+    width: 3rem;
+    height: .1rem;
+    background-color: #deaa86;
+    position: absolute;
+    top: 1rem;
+    left: -4rem;
+}
 /* end of navigation */
 /* end of navbar */
