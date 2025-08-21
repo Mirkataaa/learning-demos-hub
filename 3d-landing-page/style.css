@@ -62,35 +62,55 @@ html {
   transform-style: preserve-3d;
   transform: rotateY(45deg) rotateX(30deg);
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes boxAnimation {
+    0% {
+        transform: rotateX(0) rotateY(0) rotateZ(0);
+    }
+
+    100% {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
 }
 
 .box-1 {
     left: -25rem;
     top: -6rem;
+    animation: boxAnimation 100s infinite linear;
 }
 .box-2 {
     left: -11rem;
     top: -23rem;
+    animation: boxAnimation 100s -10s infinite linear;
 }
 .box-3 {
     left: 10rem;
     top: -23rem;
+    animation: boxAnimation 100s -20s infinite linear;
 }
 .box-4 {
     left: 25rem;
     top: -6rem;
+    animation: boxAnimation 100s -30s infinite linear;
 }
 .box-5 {
     left: 22rem;
     top: 13rem;
+    animation: boxAnimation 100s -40s infinite linear;
 }
 .box-6 {
     left: 0rem;
     top: 25rem;
+    animation: boxAnimation 100s -50s infinite linear;
 }
 .box-7 {
     left: -21rem;
     top: 14rem;
+    animation: boxAnimation 100s -60s infinite linear;
 }
 
 .box div {
