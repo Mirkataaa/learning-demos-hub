@@ -33,4 +33,17 @@ let interval = setInterval(() => {
   });
   textStyle();
   current++;
-}, 1000);
+}, 5000);
+
+boxes.forEach((box) => {
+  box.addEventListener('click' , () => {
+    boxes.forEach((b) => {
+      b.classList.remove('active');
+    });
+    box.classList.add('active');
+
+    current = box.classList[1].split('-')[1] * 1;
+    textStyle();
+    clearInterval(interval);
+  })
+})

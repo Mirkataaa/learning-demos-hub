@@ -38,6 +38,7 @@ html {
 .heading span {
   font-size: 4rem;
   color: #efd81d;
+  transition: color .2s;
 }
 
 .btn {
@@ -50,6 +51,8 @@ html {
   letter-spacing: 0.1rem;
   border: none;
   margin-top: 3.5rem;
+  cursor: pointer;
+  transition: background-color .3s;
 }
 
 .boxes {
@@ -71,6 +74,8 @@ html {
   display: flex;
   justify-content: center;
   align-items: center ;
+  cursor: pointer;
+  transition: all .5s;
 }
 
 @keyframes boxAnimation {
