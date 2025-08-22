@@ -119,6 +119,12 @@ html {
     animation: boxAnimation 100s -60s infinite linear;
 }
 
+.active.box div {
+  width: 16rem;
+  height: 16rem;
+  transition: all .2s .5s ease-in-out;
+}
+
 .box div {
   width: 7rem;
   height: 7rem;
@@ -159,8 +165,33 @@ html {
     background-color: #DE6449;
 }
 
-.top-side {
-  transform: rotateX(90deg) translateZ(3.5rem);
+.active .top-side {
+  transform: rotateX(90deg) translateZ(8rem);
+}
+
+.active .bottom-side {
+  transform: rotateX(90deg) translateZ(-8rem);
+}
+
+.active .front-side {
+  transform: translateZ(8rem);
+}
+
+.active .back-side {
+  transform: translateZ(-8rem);
+}
+
+.active .right-side {
+  transform: rotateY(-90deg) translateX(8rem);
+  transform-origin: right;
+}
+
+.active .left-side {
+  transform: rotateY(-90deg) translateX(-8rem);
+  transform-origin: left;
+}
+.active .top-side {
+  transform: rotateX(90deg) translateZ(8rem);
 }
 
 .bottom-side {

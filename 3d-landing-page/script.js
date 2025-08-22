@@ -1,16 +1,36 @@
-const boxes = document.querySelectorAll('.box');
+const boxes = document.querySelectorAll(".box");
+const heading = document.querySelector(".heading span");
+const btn = document.querySelector(".btn");
 
+const colors = [
+  "#efd81d",
+  "#61dbfb",
+  "#41b883",
+  "#b52e31",
+  "#43853d",
+  "#cf6498",
+  "#DE6449",
+];
+
+const techs = ["JS", "React", "Vue", "Angular", "NodeJS", "Sass", "Svetle"];
 let current = 1;
 
-let interval = setInterval(() => {
-    boxes.forEach((box) => {
-        if(current > boxes.length) current = 1;
-        if(box.classList[1].split('-')[1] * 1 === current) {
-            box.classList.add('active');
-        } else {
-            box.classList.remove('active')
-        }
-    })
+const textStyle = () => {
+  heading.style.color = colors[current -1];
+  heading.textContent = techs[current -1];
+  btn.style.backgroundColor = colors[current-1];
+  btn.firstElementChild.textContent = techs[current -1];
+}
 
-    current++
-} , 1000)
+let interval = setInterval(() => {
+  boxes.forEach((box) => {
+    if (current > boxes.length) current = 1;
+    if (box.classList[1].split("-")[1] * 1 === current) {
+      box.classList.add("active");
+    } else {
+      box.classList.remove("active");
+    }
+  });
+  textStyle();
+  current++;
+}, 1000);
