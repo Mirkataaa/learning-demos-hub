@@ -35,6 +35,43 @@
     text-align: right;
 }
 
+.btns {
+    position: absolute;
+    top: 50px;
+    right: 60px;
+}
+
+.btn {
+    width: 170px;
+    padding: 10px 15px;
+    margin-right: 20px;
+    border-radius: 50px;
+    font-family: "Josefin sans" , sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    border: 2px solid tomato;
+    transition: transform .3s;
+}
+
+.login {
+    background-color: tomato;
+}
+
+.signup {
+    background-color: transparent;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
 .form-container {
     display: none;
 }
