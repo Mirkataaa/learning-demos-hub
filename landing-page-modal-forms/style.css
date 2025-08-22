@@ -9,3 +9,32 @@
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)) , url(shea-rouda-Ete0zMKPWys-unsplash.jpg) 25% 75% no-repeat;
   background-size: cover;
 }
+
+.banner-text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+
+.banner-text h1 {
+    color: #fff;
+    font-family: "Montserrat" , sans-serif;
+    font-size: 80px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.banner-text p {
+    color: #eee;
+    font-family: "Josefin sans" , sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-align: right;
+}
+
+.form-container {
+    display: none;
+}
