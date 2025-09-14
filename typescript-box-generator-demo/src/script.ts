@@ -2,7 +2,7 @@ import { BoxSizes, createBox } from "./modules/box.js";
 
 const inputField = document.getElementById("amount") as HTMLInputElement;
 const button = document.getElementById("generate") as HTMLButtonElement;
-const output = document.getElementById("otput") as HTMLOutputElement;
+const output = document.getElementById("output") as HTMLOutputElement;
 
 // add event types for event listeners
 
@@ -44,7 +44,19 @@ function buildBoxes(): void {
 
       // check if the oneBoxSize is a bomb
       if (oneBoxSize === BoxSizes.BOMB) {
-        alert("BOMB");
+        boxes.forEach((box) => {
+          box.setColor("red");
+          box.element.addEventListener("click", () => {
+            box.setColor("blue");
+            console.log("The box id is public: ", +box.id);
+          });
+        });
+
+        // style and display a dynamic message
+        inputField.disabled = true;
+        inputField.className = "lost";
+        button.disabled = true;
+        output.innerHTML = `You lost. You managed to produce ${boxes.length} box(s) before blowing up`;
         return;
       }
 
@@ -57,7 +69,7 @@ function buildBoxes(): void {
 
       i++;
       // push the box in the global array
-      boxes.push(box)
+      boxes.push(box);
 
       if (i < boxAmount) {
         boxGenerator();
