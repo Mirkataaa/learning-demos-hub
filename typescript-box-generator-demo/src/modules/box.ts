@@ -1,6 +1,6 @@
 // define a set of named box sizes using TS's enum
 // All enum by default are public and we cant change this
-enum BoxSizes {
+export enum BoxSizes {
   Small = 40,
   Medium = 80,
   Large = 120,
@@ -18,7 +18,7 @@ interface PublicBoxProperties {
   setColor: (color: string) => void;
 }
 
-function createBox<T>(boxInfo: BoxStructure<T>): PublicBoxProperties {
+export function createBox<T extends string | number>(boxInfo: BoxStructure<T>): PublicBoxProperties {
   const id = boxInfo.id;
   const size = boxInfo.size;
   // create box element
@@ -32,9 +32,9 @@ function createBox<T>(boxInfo: BoxStructure<T>): PublicBoxProperties {
   document.querySelector(".wrapper")?.appendChild(element);
 
   function getRandomColor(): string {
-    let red: number = Math.floor(Math.random() * 255);
-    let greem: number = Math.floor(Math.random() * 255);
-    let blue: number = Math.floor(Math.random() * 255);
+    let red: number = Math.floor(Math.random() * 256);
+    let greem: number = Math.floor(Math.random() * 256);
+    let blue: number = Math.floor(Math.random() * 256);
 
     return `rgb(${red} , ${greem} , ${blue})`;
   }
