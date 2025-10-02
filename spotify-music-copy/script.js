@@ -49,20 +49,79 @@ const playSong = () => {
   container.classList.add("pause");
   playPauseBtn.firstElementChild.classList = "fa-solid fa-pause";
   audio.play();
-  cover.classList.add('rotate')
+  cover.classList.add("rotate");
 };
 
 const pauseSong = () => {
   container.classList.remove("pause");
   playPauseBtn.firstElementChild.classList = "fa-solid fa-play";
   audio.pause();
-  cover.classList.remove('rotate')
+  cover.classList.remove("rotate");
 };
 
 playPauseBtn.addEventListener("click", () => {
   if (container.classList.contains("pause")) {
     pauseSong();
   } else {
-    playSong()
+    playSong();
   }
+});
+
+// ! prev & next functionality
+
+const prevSongPlay = () => {
+  songIndex--;
+  if (songIndex < 0) {
+    songIndex = songData.length - 1;
+  }
+
+  loadSong(songIndex);
+  playSong();
+};
+
+const nextSongPlay = () => {
+  songIndex++;
+  if (songIndex > songData.length - 1) {
+    songIndex = 0;
+  }
+
+  loadSong(songIndex);
+  playSong();
+};
+
+prevBtn.addEventListener("click", prevSongPlay);
+nextBtn.addEventListener("click", nextSongPlay);
+
+// ! time update / music duration
+
+audio.addEventListener("loadedmetadata", () => {
+  let audioDuration = audio.duration;
+  let totalMinutes = Math.floor(audioDuration / 60);
+  let totalSeconds = Math.floor(audioDuration % 60);
+
+  if (totalSeconds < 10) {
+    totalSeconds = `0${totalSeconds}`;
+  }
+
+  let songDuration = document.querySelector(".time span:nth-child(2)");
+  songDuration.textContent = `${totalMinutes}:${totalSeconds}`;
+});
+
+audio.addEventListener("timeupdate", (e) => {
+  const currentTime = e.target.currentTime;
+  const duration = e.target.duration;
+
+  let currentTimeWidth = (currentTime / duration) * 100;
+  songProgress.style.width = `${currentTimeWidth}%`;
+
+  let songCurrentTime = document.querySelector(".time span:nth-child(1)");
+
+  let currentMinutes = Math.floor(currentTime / 60);
+  let currentSeconds = Math.floor(currentTime % 60);
+
+  if (currentSeconds < 10) {
+    currentSeconds = `0${currentSeconds}`;
+  }
+
+  songCurrentTime.textContent = `${currentMinutes}:${currentSeconds}`;
 });
