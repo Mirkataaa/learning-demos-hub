@@ -1,32 +1,80 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    outline: none;
-    font-family: "Signika Negative" , sans-serif;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Signika Negative", sans-serif;
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 .container {
-    width: 100%;
-    height: 100dvh;
-    background: linear-gradient(#313131, #151515);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  min-height: 100dvh;
+  background: linear-gradient(#313131, #151515);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .player {
-    width: 35rem;
-    height: 70rem;
-    background: linear-gradient(to right, #313234, #2f3031);
-    box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.4);
-    border-radius: 3rem;
-    display: flex;
-    flex-direction: column;
-    padding: 3rem;
+  width: clamp(20rem, 80%, 40rem);
+  aspect-ratio: 1/2;
+  padding: clamp(2rem, 5%, 3rem);
+  background: linear-gradient(to right, #313234, #2f3031);
+  box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.4);
+  border-radius: 3rem;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
 }
 
+.player-top {
+  width: 100%;
+  gap: clamp(0.5rem, 1vw, 2rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.player-btn {
+  width: clamp(3.5rem, 7vw, 5rem);
+  height: clamp(3.5rem, 7vw, 5rem);
+  border: 0.2rem solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  background-color: #2b2c2e;
+  color: #a8a9ab;
+  box-shadow: 0.5rem 0.5rem 2rem -1rem rgba(0, 0, 0, 0.5),
+    -0.4rem -0.4rem 2rem -0.1rem rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.player-btn:active {
+  transform: scale(0.95);
+}
+
+.player-top span {
+  font-size: 1.3rem;
+  color: #a8a9ab;
+}
+
+.player-body {
+  width: 100%;
+  height: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.current-song {
+  height: clamp(10rem, 35vw, 20rem);
+  width: clamp(10rem, 35vw, 20rem);
+  border: 0.5rem solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  box-shadow: 0.6rem 0.6rem 4rem -0.1rem rgba(0, 0, 0, 0.9),
+    -0.6rem -0.6rem 4rem -0.2rem rgba(255, 255, 255, 0.4);
+  position: relative;
+}
