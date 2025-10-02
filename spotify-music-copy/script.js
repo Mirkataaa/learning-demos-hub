@@ -125,3 +125,13 @@ audio.addEventListener("timeupdate", (e) => {
 
   songCurrentTime.textContent = `${currentMinutes}:${currentSeconds}`;
 });
+
+songTime.addEventListener("click", (e) => {
+  let progressWidth = songTime.clientWidth;
+  let clickedOffsetX = e.offsetX;
+  let songDuration = audio.duration;
+  audio.currentTime = (clickedOffsetX / progressWidth) * songDuration;
+  playSong();
+});
+
+audio.addEventListener("ended", nextSongPlay);
