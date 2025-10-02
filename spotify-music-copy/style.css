@@ -77,4 +77,36 @@ html {
   box-shadow: 0.6rem 0.6rem 4rem -0.1rem rgba(0, 0, 0, 0.9),
     -0.6rem -0.6rem 4rem -0.2rem rgba(255, 255, 255, 0.4);
   position: relative;
+  transform: rotateZ(-15deg);
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+  background-color: #101112;
+  border-radius: 50%;
+  position: relative;
+}
+
+.cover span {
+  font-family: "Delicious Handrawn", cursive;
+  position: absolute;
+  display: block;
+  line-height: 1;
+}
+
+.cover span:nth-child(1) {
+  color: #ddd;
+  font-size: clamp(1rem, 2vw, 1.6rem);
+  top: 20%;
+  left: 30%;
+}
+
+.cover span:nth-child(2) {
+  color: #ddd;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  top: 35%;
+  left: 25%;
+  width: 50%;
+  text-align: center;
 }
