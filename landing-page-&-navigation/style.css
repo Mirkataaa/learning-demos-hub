@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Signika Negative", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  min-height: 100dvh;
+  padding: 2em;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+/* ! toggle menu + burger */
+
+.menu-icon {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  z-index: 200;
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: clamp(0.8rem, 2vw, 1.4rem);
+}
+
+.line {
+  width: clamp(1.6rem, 3vw, 2.5rem);
+  height: clamp(0.2rem, 0.2vw, 0.2rem);
+  background-color: #d9f4de;
+  border-radius: 1px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.navigate .line-1 {
+  transform: translateY(0.6rem) rotate(45deg);
+}
+.navigate .line-2 {
+  opacity: 0;
+}
+.navigate .line-3 {
+  transform: translateY(-0.6rem) rotate(-45deg);
+}
+
+/* toggle text */
+.toggle-menu {
+  /* outline: 1px solid red; */
+  position: relative;
+  width: 6rem;
+  height: 3rem;
+  overflow: hidden;
+  display: flex;
+  align-self: center;
+  align-items: center;
+}
+
+.toggle-menu p {
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+  width: 100%;
+  font-size: clamp(1.5rem, 1vw, 1.9rem);
+  text-transform: uppercase;
+  color: #d9f4de;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.menu {
+  transform: translateY(0);
+}
+.close {
+  transform: translateY(150%);
+}
+.navigate .menu {
+  transform: translateY(-150%);
+}
+.navigate .close {
+  transform: translateY(0);
+}
+
+@media (max-width: 700px) {
+  .toggle-menu p {
+    top: 0.4em;
+    /* outline: 1px solid red; */
+  }
+  .navigate .line-1 {
+    transform: translateY(0.1rem) rotate(45deg);
+  }
+  .navigate .line-2 {
+    opacity: 0;
+  }
+  .navigate .line-3 {
+    transform: translateY(-0.5rem) rotate(-45deg);
+  }
+}
+
+@media (max-height: 1200px) {
+  .toggle-menu p {
+    top: 0.7rem;
+  }
+}
