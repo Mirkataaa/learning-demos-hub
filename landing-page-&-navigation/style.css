@@ -19,7 +19,6 @@ body {
 .container {
   width: 100%;
   min-height: 100dvh;
-  padding: 2em;
   background-color: rgba(0, 0, 0, 0.8);
 }
 /* ! toggle menu + burger */
@@ -63,7 +62,6 @@ body {
 
 /* toggle text */
 .toggle-menu {
-  /* outline: 1px solid red; */
   position: relative;
   width: 6rem;
   height: 3rem;
@@ -102,7 +100,7 @@ body {
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: 100;
+  z-index: 150;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -153,6 +151,111 @@ body {
 .navigation a:hover {
   letter-spacing: 1rem;
 }
+
+/* landing page */
+.landing {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(images/bg.jpg) center 20% / cover no-repeat;
+  overflow: hidden;
+  transition: filter 0.3s;
+}
+
+.navigate .landing {
+  filter: blur(1.5rem);
+  transition: filter 0.3s 0.3s;
+}
+
+/* left landing */
+.landing-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  outline: 1px solid red;
+  width: 50%;
+  height: 100%;
+}
+
+.main-heading {
+  outline: 1px solid red;
+  position: absolute;
+  top: 25%;
+  font-family: "Stick No Bills", sans-serif;
+  font-size: 20rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3rem;
+  transition: all 1s;
+}
+
+.navigate .main-heading {
+  transform: translateY(-5rem);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.main-heading-left {
+  right: -1%;
+  color: #fff;
+  text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+.about {
+  position: absolute;
+  bottom: 5rem;
+  left: 5rem;
+  outline: 1px solid red;
+  transition: all 1s;
+}
+
+.navigate .about {
+  transform: translateX(5rem);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.about h1 {
+  font-size: 6rem;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+.about p {
+  font-size: 1.6rem;
+  color: #d9f4de;
+  width: 50rem;
+  margin: 1rem 0 3rem 0;
+}
+
+.link {
+  outline: 1px solid red;
+  display: flex;
+  align-items: center;
+  width: 14rem;
+  cursor: pointer;
+}
+
+.link:hover a {
+  margin-right: 2rem;
+}
+
+.link a {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: #fff;
+  margin-right: 1rem;
+  transition: all 0.3s;
+}
+
+.link i {
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+
 
 @media (max-width: 700px) {
   .toggle-menu p {
